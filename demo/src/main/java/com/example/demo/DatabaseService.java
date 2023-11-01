@@ -23,7 +23,7 @@ public class DatabaseService {
  
         public boolean queryData() {
         try {
-           List<String> myList = jdbcTemplate.queryForList("SELECT logMessage FROM checkinlove_next_gen.app_log", String.class);
+           List<String> myList = jdbcTemplate.queryForList("SELECT logMessage FROM test.app_log", String.class);
            System.out.println(myList);
            return true;
         } catch (Exception e) {
