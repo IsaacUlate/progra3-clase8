@@ -21,14 +21,15 @@ public class DatabaseService {
         }
     }
  
-        public boolean queryData() {
-        try {
-           List<String> myList = jdbcTemplate.queryForList("SELECT logMessage FROM test.app_log", String.class);
-           System.out.println(myList);
-           return true;
-        } catch (Exception e) {
-            System.out.println(e);
-            return false;
-        }
+    public List<String> queryData() {
+        List<String> myList = null;
+       try {
+          myList = jdbcTemplate.queryForList("SELECT titulo FROM test.prueba", String.class);
+          System.out.println(myList);
+          return myList;
+       } catch (Exception e) {
+           System.out.println(e);
+           return myList;
+       }
     }
 }
